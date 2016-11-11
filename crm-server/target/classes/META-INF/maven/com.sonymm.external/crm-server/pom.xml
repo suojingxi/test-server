@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sonymm.external</groupId>
+		<artifactId>test-server</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>crm-server</artifactId>
+	<packaging>jar</packaging>
+	<name>crm-server</name>
+
+
+	<properties>
+        <start-class>com.sonymm.external.crm.server.Application</start-class>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+        <!-- Database -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+    </dependencies>
+ 
+    <!-- 创建可执行的jar插件 -->
+	<build>
+		<finalName>develop-webapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<!-- <configuration> <classifier>exec</classifier> </configuration> -->
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainclass>com.sonymm.external.crm.server.Application</mainclass>
+						</manifest>
+					</archive>
+					<descriptorrefs>
+						<descriptorref>
+							jar-with-dependencies
+						</descriptorref>
+					</descriptorrefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: crm-server
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: root
+Implementation-Vendor-Id: com.sonymm.external
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/test-server/
+ crm-server/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: com.sonymm.external.crm.server.Application
+
