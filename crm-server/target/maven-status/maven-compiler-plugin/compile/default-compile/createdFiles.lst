@@ -1,0 +1,5 @@
+com/sonymm/external/crm/server/service/UserInfoService.class
+com/sonymm/external/crm/server/controller/UserInfoController.class
+com/sonymm/external/crm/server/util/JsonUtil.class
+com/sonymm/external/crm/server/Application.class
+com/sonymm/external/crm/server/service/common/HttpClientService.class
